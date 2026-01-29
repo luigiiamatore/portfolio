@@ -1,13 +1,22 @@
-# Luigi Amatore - Personal Website 💻
-Welcome to my personal repository! This site serves as my digital business card and portfolio, hosted at [gigiamatore.me](https://gigiamatore.me).
+# 🪴 Luigi Amatore
 
-## 🛠️ Tech stack
-* **Frontend**: HTML5 & Trailwind CSS
-* **Hosting**: GitHub Pages
-* **Domain Management**: Squarespace
+Software Engineer at **Retail Reply** and MSc Computer Science Student at **Università degli Studi di Milano**.
 
-## 🚀 How it works
-This site is a static web application. Every time a `push` is made to the `main` branch, a GitHub Actions workflow automatically triggers a new deployment to the custom domain.
+This is my digital garden — a place where I cultivate my notes, share my projects, and document my journey in software engineering. Built with the **Quartz 4** framework.
 
-## 📬 Contact
-Feel free to reach out via GitHub or through the contact links on my website.
+## 🌐 Live Site
+Visit the garden at: **[gigiamatore.me](https://gigiamatore.me)**
+
+## 🛠 Tech Stack
+- **Framework:** [Quartz 4](https://quartz.jzhao.xyz/) (TypeScript/Markdown)
+- **Runtime:** Node.js v24
+- **Infrastructure:** GitHub Actions (CI/CD)
+- **Hosting:** GitHub Pages
+
+## 📂 Structure
+- `content/`: My notes and garden entries in Markdown.
+- `quartz/`: Core logic and components of the framework.
+- `quartz.config.ts`: Main configuration (branding, colors, plugins).
+
+---
+*“One who works with the door open gets all kinds of interruptions, but they also occasionally get clues as to what the world is and what might be important.” — Richard Hamming*
