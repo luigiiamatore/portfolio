@@ -1,17 +1,22 @@
-# Quartz v4
+# 🪴 Luigi Amatore
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Software Engineer at **Retail Reply** and MSc Computer Science Student at **Università degli Studi di Milano**.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+This is my digital garden — a place where I cultivate my notes, share my projects, and document my journey in software engineering. Built with the **Quartz 4** framework.
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+## 🌐 Live Site
+Visit the garden at: **[gigiamatore.me](https://gigiamatore.me)**
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+## 🛠 Tech Stack
+- **Framework:** [Quartz 4](https://quartz.jzhao.xyz/) (TypeScript/Markdown)
+- **Runtime:** Node.js v24
+- **Infrastructure:** GitHub Actions (CI/CD)
+- **Hosting:** GitHub Pages
 
-## Sponsors
+## 📂 Structure
+- `content/`: My notes and garden entries in Markdown.
+- `quartz/`: Core logic and components of the framework.
+- `quartz.config.ts`: Main configuration (branding, colors, plugins).
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+---
+*“One who works with the door open gets all kinds of interruptions, but they also occasionally get clues as to what the world is and what might be important.” — Richard Hamming*
