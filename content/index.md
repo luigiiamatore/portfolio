@@ -6,7 +6,7 @@ title: Home
 
 MSc in Computer Science from Università degli Studi di Milano | Backend Software Engineer at Retail Reply
 
-#### 🧑🏻‍💻 [[About-me|About me →]]
+#### 🧑🏻‍💻 [[About-me/|About me →]]
 
 ---
 

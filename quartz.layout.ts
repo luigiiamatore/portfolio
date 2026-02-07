@@ -17,7 +17,6 @@ export const sharedPageComponents: SharedLayout = {
 // Layout for individual notes
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
@@ -38,7 +37,12 @@ export const defaultContentPageLayout: PageLayout = {
 
 // Layout for list pages
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [
+    Component.Breadcrumbs(),
+    Component.ArticleTitle(),
+    Component.ContentMeta(),
+    Component.TagList(),
+  ],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
@@ -46,5 +50,8 @@ export const defaultListPageLayout: PageLayout = {
     Component.Darkmode(),
     Component.Explorer(),
   ],
-  right: [],
+  right: [
+    Component.Graph(),
+    Component.DesktopOnly(Component.TableOfContents()),
+  ],
 }
