@@ -1,6 +1,14 @@
 ---
-title: Luigi Amatore
+title: Home
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+# 👋🏻 Hi, I'm Luigi!
+
+MSc in Computer Science from Università degli Studi di Milano | Backend Software Engineer at Retail Reply
+
+#### 🧑🏻‍💻 [[About-me|About me →]]
+
+---
+
+[LinkedIn](https://www.linkedin.com/in/luigiamatore)\
+[GitHub](https://github.com/luigiiamatore)
