@@ -107,6 +107,7 @@ export default function Sidebar() {
           href={SITE.cvPath}
           className="inline-flex w-fit items-center border border-foreground bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-opacity hover:opacity-85"
         >
+          <DownloadIcon />
           Download CV
         </a>
 
@@ -164,6 +165,27 @@ export default function Sidebar() {
         </a>
       </div>
     </header>
+  );
+}
+
+function DownloadIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className="mr-2"
+    >
+      <path d="M12 3v12" />
+      <path d="m7 10 5 5 5-5" />
+      <path d="M5 21h14" />
+    </svg>
   );
 }
 
