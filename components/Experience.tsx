@@ -6,7 +6,7 @@ export default function Experience() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="scroll-mt-24 border-t border-border py-14 sm:py-16"
+      className="scroll-mt-24 py-14 sm:py-16"
     >
       <div className="flex flex-col gap-2">
         <SectionHeading title="Experience" id="experience" />
@@ -14,7 +14,9 @@ export default function Experience() {
           {EXPERIENCE.map((entry, index) => (
             <article
               key={`${entry.company}-${entry.role}`}
-              className="flex flex-col gap-3 border-b border-border py-8"
+              className={`flex flex-col gap-3 py-8 ${
+                index < EXPERIENCE.length - 1 ? "border-b border-border" : ""
+              }`}
             >
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                 <h3 className="flex items-baseline gap-3 text-lg font-semibold text-foreground">

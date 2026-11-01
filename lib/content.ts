@@ -8,11 +8,11 @@ export const SITE = {
   linkedin: "https://www.linkedin.com/in/luigiamatore/",
   cvPath: "/cv.pdf",
   location: "Milan, Italy",
-  availability: "Milan, open to Europe",
+  availability: "open to Europe",
   tagline:
     "Software Engineer specializing in backend and full-stack development.",
   intro:
-    "I build scalable backend systems and full-stack applications with Java and Spring Boot, and currently work on Salesforce B2C Commerce Cloud. I care about clean architecture, reliable APIs, and shipping software that holds up in production, and I'm looking to bring that to an engineering team in Copenhagen or elsewhere in Europe.",
+    "Software engineer focused on backend development, scalable applications and reliable system integrations. Experienced in Java and Spring Boot, currently working on enterprise e-commerce platforms with Salesforce Commerce Cloud.",
 };
 
 export type ExperienceEntry = {
@@ -86,25 +86,23 @@ export type TechCategory = {
 export const TECH_STACK: TechCategory[] = [
   {
     category: "Backend",
-    items: ["Java", "Spring Boot", "Hibernate", "Node.js", "Salesforce SFRA", "REST APIs"],
+    items: ["Java", "Spring Boot", "Hibernate", "Node.js", "REST APIs"],
   },
   {
     category: "Frontend",
-    items: ["TypeScript", "JavaScript", "React", "Angular"],
+    items: ["TypeScript", "JavaScript", "Angular", "React"],
   },
   {
-    category: "Databases",
+    category: "Data",
     items: ["PostgreSQL", "MySQL", "MongoDB", "Oracle"],
   },
   {
-    category: "Infrastructure & Tools",
-    items: ["Docker", "Git", "AWS", "GCP", "Salesforce Commerce Cloud"],
-  },
-  {
-    category: "Other",
-    items: ["Go", "Python", "C/C++", "Rust"],
+    category: "Tools & Infrastructure",
+    items: ["Docker", "Git", "AWS", "GCP"],
   },
 ];
+
+export const OTHER_LANGUAGES = ["Go", "Python", "C/C++", "Rust"];
 
 export type EducationEntry = {
   degree: string;
@@ -166,7 +164,6 @@ export const NAV_SECTIONS = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "tech-stack", label: "Tech Stack" },
-  { id: "projects", label: "Projects" },
   { id: "education", label: "Education & Certifications" },
   { id: "contact", label: "Contact" },
 ] as const;

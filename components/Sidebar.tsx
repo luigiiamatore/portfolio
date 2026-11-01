@@ -1,12 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { NAV_SECTIONS, SITE } from "@/lib/content";
 
 export default function Sidebar() {
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState(false);
+  const targetIndex = useRef<number | null>(null);
+  const isNavigating = useRef(false);
+  const scrollStopTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const sections = NAV_SECTIONS.map((s) => document.getElementById(s.id)).filter(
@@ -16,6 +19,8 @@ export default function Sidebar() {
 
     const observer = new IntersectionObserver(
       (entries) => {
+        if (isNavigating.current) return;
+
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const index = sections.indexOf(entry.target as HTMLElement);
@@ -27,7 +32,43 @@ export default function Sidebar() {
     );
 
     sections.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+
+    const finishNavigation = () => {
+      if (targetIndex.current !== null) {
+        setActive(targetIndex.current);
+      }
+      targetIndex.current = null;
+      isNavigating.current = false;
+    };
+
+    const handleScroll = () => {
+      if (!isNavigating.current) return;
+      if (scrollStopTimer.current) clearTimeout(scrollStopTimer.current);
+      scrollStopTimer.current = setTimeout(finishNavigation, 150);
+    };
+
+    const cancelNavigation = () => {
+      if (!isNavigating.current) return;
+      targetIndex.current = null;
+      isNavigating.current = false;
+      if (scrollStopTimer.current) clearTimeout(scrollStopTimer.current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("wheel", cancelNavigation, { passive: true });
+    window.addEventListener("touchstart", cancelNavigation, { passive: true });
+    window.addEventListener("pointerdown", cancelNavigation, { passive: true });
+    window.addEventListener("keydown", cancelNavigation);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("wheel", cancelNavigation);
+      window.removeEventListener("touchstart", cancelNavigation);
+      window.removeEventListener("pointerdown", cancelNavigation);
+      window.removeEventListener("keydown", cancelNavigation);
+      if (scrollStopTimer.current) clearTimeout(scrollStopTimer.current);
+    };
   }, []);
 
   return (
@@ -57,8 +98,9 @@ export default function Sidebar() {
         </div>
 
         <p className="text-xs font-medium uppercase tracking-[0.08em] text-muted">
-          {SITE.title} &mdash; Milan,{" "}
-          <span className="text-accent">{SITE.availability.replace("Milan, ", "")}</span>
+          {SITE.title} &mdash; Milan
+          <br />
+          <span className="text-accent">{SITE.availability}</span>
         </p>
 
         <a
@@ -77,7 +119,12 @@ export default function Sidebar() {
             <a
               key={section.id}
               href={`#${section.id}`}
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setActive(index);
+                targetIndex.current = index;
+                isNavigating.current = true;
+                setOpen(false);
+              }}
               className={`flex items-baseline gap-4 border-t border-border py-3 text-sm transition-colors hover:text-accent ${
                 active === index ? "font-bold text-foreground" : "text-muted"
               }`}

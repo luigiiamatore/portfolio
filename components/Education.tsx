@@ -6,7 +6,7 @@ export default function Education() {
     <section
       id="education"
       aria-labelledby="education-heading"
-      className="scroll-mt-24 border-t border-border py-14 sm:py-16"
+      className="scroll-mt-24 py-14 sm:py-16"
     >
       <div className="flex flex-col gap-10">
         <SectionHeading title="Education & Certifications" id="education" />
@@ -31,8 +31,8 @@ export default function Education() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-4 border-t border-border pt-8">
-          <h3 className="font-mono text-xs uppercase tracking-[0.08em] text-muted">
+        <div className="flex flex-col gap-4">
+          <h3 className="border-b border-border pb-3 font-mono text-xs uppercase tracking-[0.08em] text-muted">
             Certifications
           </h3>
           <div className="flex flex-col gap-4">

@@ -5,7 +5,7 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="scroll-mt-24 border-t border-border py-14 sm:py-16"
+      className="scroll-mt-24 py-14 sm:py-16"
     >
       <div className="flex flex-col gap-6">
         <SectionHeading title="About" id="about" />

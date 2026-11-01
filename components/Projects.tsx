@@ -6,7 +6,7 @@ export default function Projects() {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="scroll-mt-24 border-t border-border py-14 sm:py-16"
+      className="scroll-mt-24 py-14 sm:py-16"
     >
       <div className="flex flex-col gap-8">
         <SectionHeading title="Projects" id="projects" />

@@ -1,12 +1,12 @@
 import SectionHeading from "@/components/SectionHeading";
-import { TECH_STACK } from "@/lib/content";
+import { OTHER_LANGUAGES, TECH_STACK } from "@/lib/content";
 
 export default function TechStack() {
   return (
     <section
       id="tech-stack"
       aria-labelledby="tech-stack-heading"
-      className="scroll-mt-24 border-t border-border py-14 sm:py-16"
+      className="scroll-mt-24 py-14 sm:py-16"
     >
       <div className="flex flex-col gap-8">
         <SectionHeading title="Tech Stack" id="tech-stack" />
@@ -29,6 +29,10 @@ export default function TechStack() {
             </div>
           ))}
         </div>
+
+        <p className="text-sm text-muted">
+          Also familiar with {OTHER_LANGUAGES.join(", ")}.
+        </p>
       </div>
     </section>
   );
